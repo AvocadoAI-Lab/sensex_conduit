@@ -1,0 +1,5 @@
+/target
+/query_results
+.idea
+.env
+session.json

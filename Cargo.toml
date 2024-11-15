@@ -1,0 +1,26 @@
+[package]
+name = "sensex_conduit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.32.0", features = ["full"] }
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.107"
+reqwest = { version = "0.11.20", features = ["json"] }
+futures = "0.3"
+hyper = { version = "0.14", features = ["full"] }
+serde_derive = "1.0.213"
+uuid = { version = "1.7.0", features = ["v4"] }
+dotenv = "0.15.0"
+rand = "0.8.5"
+base64 = "0.21.7"
+sha2 = "0.10.8"
+native-tls = "0.2.11"
+tokio-native-tls = "0.3.1"
+governor = "0.6.0"
+nonzero_ext = "0.3.0"
+
+[dev-dependencies]
+hyper = { version = "0.14", features = ["full"] }
+tempfile = "3.10.1"
