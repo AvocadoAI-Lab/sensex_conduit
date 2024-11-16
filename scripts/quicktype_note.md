@@ -1,5 +1,31 @@
 # Quicktype 參數說明文件
 
+## 安裝說明
+
+在專案中安裝 quicktype：
+```bash
+npm install quicktype
+```
+
+使用 npx 執行（推薦方式）：
+```bash
+npx quicktype [參數]
+```
+
+或者在 package.json 的 scripts 中加入：
+```json
+{
+  "scripts": {
+    "generate-types": "quicktype **/*.json -o types.ts"
+  }
+}
+```
+
+然後使用：
+```bash
+npm run generate-types
+```
+
 ## 基本參數
 
 - `-o, --out FILE`：指定輸出檔案
@@ -39,44 +65,44 @@
 
 ### 1. 基本使用
 ```bash
-quicktype input.json -o types.ts
+npx quicktype input.json -o types.ts
 ```
 
 ### 2. 最簡潔輸出
 ```bash
-quicktype input.json -o types.ts --just-types --no-enums
+npx quicktype input.json -o types.ts --just-types --no-enums
 ```
 
 ### 3. 完整類型定義
 ```bash
-quicktype input.json -o types.ts --alphabetize-properties --explicit-unions
+npx quicktype input.json -o types.ts --alphabetize-properties --explicit-unions
 ```
 
 ### 4. 自訂命名風格
 ```bash
-quicktype input.json -o types.ts --naming-style pascal --acronym-style pascal
+npx quicktype input.json -o types.ts --naming-style pascal --acronym-style pascal
 ```
 
 ### 5. 所有屬性可選
 ```bash
-quicktype input.json -o types.ts --all-properties-optional
+npx quicktype input.json -o types.ts --all-properties-optional
 ```
 
 ## 進階使用技巧
 
 1. 處理多個輸入檔案：
 ```bash
-quicktype **/*.json -o types.ts
+npx quicktype **/*.json -o types.ts
 ```
 
 2. 從 URL 生成類型：
 ```bash
-quicktype --src https://api.example.com/schema.json -o types.ts
+npx quicktype --src https://api.example.com/schema.json -o types.ts
 ```
 
 3. 自訂縮排和格式：
 ```bash
-quicktype input.json -o types.ts --indentation 2 --no-comments
+npx quicktype input.json -o types.ts --indentation 2 --no-comments
 ```
 
 ## 注意事項
@@ -90,7 +116,7 @@ quicktype input.json -o types.ts --indentation 2 --no-comments
 
 ### 1. 基本型別生成
 ```bash
-quicktype **/*.json -o types1.ts
+npx quicktype **/*.json -o types1.ts
 ```
 - 處理所有 JSON 檔案
 - 包含完整的型別定義和列舉
@@ -98,7 +124,7 @@ quicktype **/*.json -o types1.ts
 
 ### 2. 無列舉型別生成
 ```bash
-quicktype **/*.json -o types2.ts --no-enums
+npx quicktype **/*.json -o types2.ts --no-enums
 ```
 - 處理所有 JSON 檔案
 - 不生成列舉，改用字串字面值
@@ -106,7 +132,7 @@ quicktype **/*.json -o types2.ts --no-enums
 
 ### 3. 最小化型別生成
 ```bash
-quicktype **/*.json -o types3.ts --no-enums --just-types --alphabetize-properties
+npx quicktype **/*.json -o types3.ts --no-enums --just-types --alphabetize-properties
 ```
 - 處理所有 JSON 檔案
 - 不生成列舉
