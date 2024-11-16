@@ -116,7 +116,7 @@ npx quicktype input.json -o types.ts --indentation 2 --no-comments
 
 ### 1. 基本型別生成
 ```bash
-npx quicktype **/*.json -o types1.ts
+quicktype **/*.json -o types1.ts
 ```
 - 處理所有 JSON 檔案
 - 包含完整的型別定義和列舉
@@ -124,7 +124,7 @@ npx quicktype **/*.json -o types1.ts
 
 ### 2. 無列舉型別生成
 ```bash
-npx quicktype **/*.json -o types2.ts --no-enums
+quicktype **/*.json -o types2.ts --no-enums
 ```
 - 處理所有 JSON 檔案
 - 不生成列舉，改用字串字面值
@@ -132,7 +132,7 @@ npx quicktype **/*.json -o types2.ts --no-enums
 
 ### 3. 最小化型別生成
 ```bash
-npx quicktype **/*.json -o types3.ts --no-enums --just-types --alphabetize-properties
+quicktype **/*.json -o types3.ts --no-enums --just-types --alphabetize-properties
 ```
 - 處理所有 JSON 檔案
 - 不生成列舉
