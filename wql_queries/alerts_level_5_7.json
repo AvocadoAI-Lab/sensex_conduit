@@ -1,0 +1,49 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "agent.name": "{{agent_name}}"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "range": {
+            "rule.level": {
+              "gte": 5,
+              "lte": 7
+            }
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "timestamp",
+    "rule.id",
+    "rule.level",
+    "rule.description",
+    "rule.groups",
+    "agent.name",
+    "agent.id",
+    "manager.name",
+    "data.*",
+    "decoder.name",
+    "location"
+  ],
+  "size": 10000,
+  "sort": [
+    {
+      "timestamp": {
+        "order": "desc"
+      }
+    },
+    {
+      "rule.level": {
+        "order": "desc"
+      }
+    }
+  ]
+}
