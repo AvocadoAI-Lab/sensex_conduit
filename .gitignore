@@ -3,3 +3,4 @@
 .idea
 .env
 session.json
+/node_modules
