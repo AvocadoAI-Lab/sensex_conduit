@@ -1,0 +1,35 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "agent.name": "{{agent_name}}"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "range": {
+            "rule.level": {
+              "gte": 10
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 10000,
+  "sort": [
+    {
+      "timestamp": {
+        "order": "desc"
+      }
+    },
+    {
+      "rule.level": {
+        "order": "desc"
+      }
+    }
+  ]
+}
